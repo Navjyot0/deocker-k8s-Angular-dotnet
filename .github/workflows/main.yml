@@ -1,20 +1,12 @@
 name: Deploy to ECR
-
 on:
- 
   push:
     branches: [ main ]
-
 jobs:
-  
   build:
-    
     name: Build Image
     runs-on: ubuntu-latest
-
-   
     steps:
-
     - name: Check out code
       uses: actions/checkout@v2
     
@@ -23,7 +15,7 @@ jobs:
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: ap-south-1
+        aws-region: us-east-1
 
     - name: Login to Amazon ECR
       id: login-ecr
